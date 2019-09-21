@@ -7,6 +7,10 @@ The calling and parameter conventions are as close as possible to the documentat
 
 # Installation
 
+Download the sceneKit folder and move it to site-packages-3 under Python Modules in Pythonista. Restart Pythonista.
+
+Download the sceneKit demo folder and move it to your sample scripts folder.
+
 
 # Basics
 
