@@ -55,7 +55,7 @@ These are:
 * CAKeyframeAnimation
 * CAAnimationGroup
 
-* *CATransition is not implemented but SKTransition is, as scn.Transition, except transitionWithCIFilter:duration:
+* *CATransition is not implemented but SKTransition is, as scn.Transition, except transitionWithCIFilter:duration:*
 
 In the wrapper the corresponding classes are called `scn.Core...`, like `scn.CoreAnimation`, i.e., substitute CA for Core.
 
