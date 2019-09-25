@@ -73,7 +73,9 @@ class SceneRenderer:
       block = ObjCBlock(_func)
     else: block = None
     if withTransition is None: withTransition = transition
-    self.ID.presentScene_withTransition_incomingPointOfView_completionHandler_(scene.ID, withTransition.ID, incomingPointOfView.ID, block)
+    if withTransition is not None: withTransition = withTransition.ID
+    if incomingPointOfView is not None: incomingPointOfView = incomingPointOfView.ID
+    self.ID.presentScene_withTransition_incomingPointOfView_completionHandler_(scene.ID, withTransition, incomingPointOfView, block)
     
   def setPointOfView(self, aNode):
     self.ID.setPointOfView_(aNode.ID)    
@@ -246,15 +248,15 @@ class Transition(CInst):
     elif fadeWithDuration is not None:
       self.ID = SKTransition.fadeWithDuration_(FadeWithDuration)
     elif flipHorizontalWithDuration is not None:
-      self.ID = SKTransition.flipHorizontalWithDuration_(FlipHorizontalWithDuration)
+      self.ID = SKTransition.flipHorizontalWithDuration_(flipHorizontalWithDuration)
     elif flipVerticalWithDuration is not None: 
-      self.ID = SKTransition.flipVerticalWithDuration_(FlipVerticalWithDuration)
+      self.ID = SKTransition.flipVerticalWithDuration_(flipVerticalWithDuration)
     elif moveInWithDirection is not None:
-      self.ID = SKTransition.moveInWithDirection_duration_(MoveInWithDirection, duration)
+      self.ID = SKTransition.moveInWithDirection_duration_(moveInWithDirection, duration)
     elif pushWithDirection is not None:
-      self.ID = SKTransition.pushWithDirection_duration_(PushWithDirection, duration)
+      self.ID = SKTransition.pushWithDirection_duration_(pushWithDirection, duration)
     elif revealWithDirection is not None:
-      self.ID = SKTransition.revealWithDirection_duration_(RevealWithDirection, duration)
+      self.ID = SKTransition.revealWithDirection_duration_(revealWithDirection, duration)
     elif ID is not None:
       self.ID = ID
     else:
@@ -265,91 +267,91 @@ class Transition(CInst):
     return cls(crossFadeWithDuration=duration)
   @classmethod
   def crossFade(cls, duration=0):
-    return crossFadeWithDuration(cls, duration)
+    return cls.crossFadeWithDuration(cls, duration)
   
   @classmethod
   def doorsCloseHorizontalWithDuration(cls, duration=0):
     return cls(doorsCloseHorizontalWithDuration=duration)
   @classmethod
   def doorsCloseHorizontal(cls, duration=0):
-    return doorsCloseHorizontalWithDuration(cls, duration)
+    return cls.doorsCloseHorizontalWithDuration(cls, duration)
     
   @classmethod
   def doorsCloseVerticalWithDuration(cls, duration=0):
     return cls(doorsCloseVerticalWithDuration=duration)
   @classmethod
   def doorsCloseVertical(cls, duration=0):
-    return doorsCloseVerticalWithDuration(cls, duration)
+    return cls.doorsCloseVerticalWithDuration(cls, duration)
     
   @classmethod
   def doorsOpenHorizontalWithDuration(cls, duration=0):
     return cls(doorsOpenHorizontalWithDuration=duration)
   @classmethod
   def doorsOpenHorizontal(cls, duration=0):
-    return doorsOpenHorizontalWithDuration(cls, duration)
+    return cls.doorsOpenHorizontalWithDuration(cls, duration)
     
   @classmethod
   def doorsOpenVerticalWithDuration(cls, duration=0):
     return cls(doorsOpenVerticalWithDuration=duration)
   @classmethod
   def doorsOpenVertical(cls, duration=0):
-    return doorsOpenVerticalWithDuration(cls, duration)
+    return cls.doorsOpenVerticalWithDuration(cls, duration)
     
   @classmethod
   def doorwayWithDuration(cls, duration=0):
     return cls(doorwayWithDuration=duration)
   @classmethod
   def doorway(cls, duration=0):
-    return doorwayWithDuration(cls, duration)
+    return cls.doorwayWithDuration(cls, duration)
     
   @classmethod
   def fadeWithColorWithDuration(cls, color=RGBA(0, 0, 0, 0), duration=0):
     return cls(fadeWithColor=color, duration=duration)
   @classmethod
   def fadeWithColor(cls, color=RGBA(0, 0, 0, 0), duration=0):
-    return fadeWithColorWithDuration(cls, color, duration)
+    return cls.fadeWithColorWithDuration(cls, color, duration)
     
   @classmethod
   def fadeWithDuration(cls, duration=0):
     return cls(fadeWithDuration=duration)
   @classmethod
   def fade(cls, duration=0):
-    return fadeWithDuration(cls, duration)
+    return cls.fadeWithDuration(cls, duration)
     
   @classmethod
   def flipHorizontalWithDuration(cls, duration=0):
     return cls(flipHorizontalWithDuration=duration)
   @classmethod
   def flipHorizontal(cls, duration=0):
-    return flipHorizontalWithDuration(cls, duration)
+    return cls.flipHorizontalWithDuration(cls, duration)
     
   @classmethod
   def flipVerticalWithDuration(cls, duration=0):
     return cls(flipVerticalWithDuration=duration)
   @classmethod
   def flipVertical(cls, duration=0):
-    return flipVerticalWithDuration(cls, duration) 
+    return cls.flipVerticalWithDuration(cls, duration) 
   
   @classmethod
   def moveInWithDirection(cls, direction=None, duration=0):
     return cls(moveInWithDirection=direction, duration=duration)
   @classmethod
   def moveIn(cls, direction=None, duration=0):
-    return moveInWithDirection(cls, direction, duration)
+    return cls.moveInWithDirection(cls, direction, duration)
     
   @classmethod
   def pushWithDirection(cls, direction=None, duration=0):
     return cls(pushWithDirection=direction, duration=duration)
   @classmethod
   def push(cls, direction=None, duration=0):
-    return pushWithDirection(cls, direction, duration)
+    return cls.pushWithDirection(cls, direction, duration)
     
   @classmethod
   def revealWithDirection(cls, direction=None, duration=0):
     return cls(revealWithDirection=direction, duration=duration)
   @classmethod
   def reveal(cls, direction=None, duration=0):
-    return revealWithDirection(cls, direction, duration)
+    return cls.revealWithDirection(cls, direction, duration)
     
   def setPausesIncomingScene(self, aBool):
     self.ID.setPausesIncomingScene_(aBool)    
