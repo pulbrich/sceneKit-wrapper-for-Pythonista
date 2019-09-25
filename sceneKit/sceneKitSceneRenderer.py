@@ -246,17 +246,17 @@ class Transition(CInst):
       r, g, b, a = parse_color(fadeWithColor)
       self.ID = SKTransition.fadeWithColor_duration_(ObjCClass('UIColor').color(red=r, green=g, blue=b, alpha=a), duration)
     elif fadeWithDuration is not None:
-      self.ID = SKTransition.fadeWithDuration_(FadeWithDuration)
+      self.ID = SKTransition.fadeWithDuration_(fadeWithDuration)
     elif flipHorizontalWithDuration is not None:
       self.ID = SKTransition.flipHorizontalWithDuration_(flipHorizontalWithDuration)
     elif flipVerticalWithDuration is not None: 
       self.ID = SKTransition.flipVerticalWithDuration_(flipVerticalWithDuration)
     elif moveInWithDirection is not None:
-      self.ID = SKTransition.moveInWithDirection_duration_(moveInWithDirection, duration)
+      self.ID = SKTransition.moveInWithDirection_duration_(moveInWithDirection.value, duration)
     elif pushWithDirection is not None:
-      self.ID = SKTransition.pushWithDirection_duration_(pushWithDirection, duration)
+      self.ID = SKTransition.pushWithDirection_duration_(pushWithDirection.value, duration)
     elif revealWithDirection is not None:
-      self.ID = SKTransition.revealWithDirection_duration_(revealWithDirection, duration)
+      self.ID = SKTransition.revealWithDirection_duration_(revealWithDirection.value, duration)
     elif ID is not None:
       self.ID = ID
     else:
