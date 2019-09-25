@@ -134,7 +134,9 @@ class BoundingVolume:
     if retFlag:
       return (vector3Make(getCStructValuesAsList(bbox_min)), vector3Make(getCStructValuesAsList(bbox_max)))
     else:
-      return None     
+      return None
+  def getBoundingBoxMin(self):
+    return self.getBoundingBox(self)
   boundingBox = property(getBoundingBox, setBoundingBox)
   
   def getBoundingSphere(self):
