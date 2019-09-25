@@ -685,7 +685,8 @@ class Text(Geometry):
   chamferProfile = property(getChamferProfile, setChamferProfile)
   
 class Shape(Geometry):
-  def __init__(self, extrusionDepth=None, shapeWithPath=None, ID=None):
+  def __init__(self, path=None, extrusionDepth=None, shapeWithPath=None, ID=None):
+    if shapeWithPath is None: shapeWithPath = path
     if extrusionDepth is not None:
       self.ID = SCNShape.shapeWithPath_extrusionDepth_(ObjCInstance(shapeWithPath), extrusionDepth)
     elif ID is not None:
