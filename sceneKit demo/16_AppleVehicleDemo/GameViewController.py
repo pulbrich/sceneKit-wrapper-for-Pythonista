@@ -646,7 +646,6 @@ class GameViewController:
     ui.delay(self.exit, 2.0)
     
   def exit(self):
-    scn.clearCache()
     raise SystemExit()
     
 GameViewController.run()

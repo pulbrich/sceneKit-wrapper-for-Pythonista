@@ -203,7 +203,6 @@ class Demo:
     ui.delay(self.exit, 1.5)
     
   def exit(self):
-    scn.clearCache()
     raise SystemExit()
     
   def update(self, view, atTime):
