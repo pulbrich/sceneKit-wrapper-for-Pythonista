@@ -639,11 +639,14 @@ class GameViewController:
     
     for aView in self.main_view.subviews:
       self.main_view.remove_subview(aView)
-
+      
+    self.scnView.removeFromSuperview()
+    
     self.main_view.close()
     ui.delay(self.exit, 2.0)
     
   def exit(self):
+    scn.clearCache()
     raise SystemExit()
     
 GameViewController.run()

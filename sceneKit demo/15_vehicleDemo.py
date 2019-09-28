@@ -198,10 +198,12 @@ class Demo:
       aNode.removeAllAudioPlayers()
     self.physics_world.removeAllBehaviors()
     self.scene_view.scene.paused = True
+    self.scene_view.removeFromSuperview()
     self.main_view.close()
     ui.delay(self.exit, 1.5)
     
   def exit(self):
+    scn.clearCache()
     raise SystemExit()
     
   def update(self, view, atTime):
