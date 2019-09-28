@@ -99,6 +99,9 @@ class View(SceneRenderer, CInst):
   def addToSuperview(self, aUIView):
     aUIView.objc_instance.addSubview_(self.ID)
     
+  def removeFromSuperview(self):
+    self.ID.removeFromSuperview()
+    
   def initWithFrame(self, frame=None):
     if frame is not None:
       try:
