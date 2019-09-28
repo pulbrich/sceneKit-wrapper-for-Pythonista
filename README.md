@@ -18,6 +18,8 @@ The best way to get acquainted with the wrapper (or with SceneKit features) is g
 
 A word of caution: just as with any code that extensively relies on the objC (objc_util and ctypes) runtime environment, it is rather easy to crash Pythonista with wrong SceneKit calls. Random crashes when exiting a script may also happen. Fear not, no harm is done. Eliminate any new code from your script until you find the offending line, and figure out what may have caused the problem. The usual culprit is wrong types for some arguments. E.g., if an attribute expects a Node instance and you supply instead a Geometry one, chances are that your code will fail with some kind of address fault.
 
+Also pay attention to proper cleanup operations before exiting your script. As a minimum call the `removeFromSuperview()` method on your `sceneView` to avoid crashes at a later run.
+
 # Conventions
 
 Include the wrapper in your script as follows:
@@ -389,10 +391,12 @@ lucy_node_2 = scn.Node.nodeWithMDLObject(mesh)
 
 # Convenience methods and properties unavailable in SceneKit proper
 
-`View` instance method:
+`View` instance methods:
 
 ```
-def addToSuperview(self, aUIView):
+def addToSuperview(uiView):
+
+def removeFromSuperview():
 ```
 
 `GeometrySource` Class methods:
