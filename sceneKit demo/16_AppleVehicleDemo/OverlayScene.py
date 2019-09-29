@@ -50,7 +50,7 @@ class CameraButton:
     self._clicked = False
     
     self.sound = scn.AudioSource("resources/click.caf")
-    self.clickAction = scn.Action.playAudioSource(self.sound, False)
+    self.clickAction = scn.Action.playAudioSource(self.sound, True)
     
   def setClicked(self, sender):
     self._clicked = True
