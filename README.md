@@ -415,6 +415,8 @@ vectors
 
 # Unresolved issues
 
+**scn.Action.playAudioSource(sound, wait=False)** crashes on repeated calls. Work-around: call with `wait=True`.
+
 **Skinner** class - implemented but the init method always returns None. Needs futher investigation.
 
 **light.sphericalHarmonicsCoefficients** - returns `None` also for probe light type.
