@@ -194,6 +194,14 @@ class View(SceneRenderer, CInst):
     return self.ID.drawableResizesAsynchronously()
   drawableResizesAsynchronously = property(getDrawableResizesAsynchronously, setDrawableResizesAsynchronously)
   
+  def setFrame(self, aFrame):
+    aFrame = CGRect(CGPoint(aFrame[0], aFrame[1]), CGSize(aFrame[3], aFrame[4]))
+    self.ID.setFrame_(aFrame)    
+  def getFrame(self):
+    ret = self.ID.frame()
+    return tuple(ret.origin.x, ret.origin.y, ret.size.height, ret.size.width)
+  frame = property(getFrame, setFrame)
+  
     
 class Scene(Animatable, CInst):
   def __init__(self, name=None, inDirectory= None, options=None, url=None, mdlAsset=None, ID=None):

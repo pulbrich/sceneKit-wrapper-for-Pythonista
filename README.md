@@ -391,12 +391,14 @@ lucy_node_2 = scn.Node.nodeWithMDLObject(mesh)
 
 # Convenience methods and properties unavailable in SceneKit proper
 
-`View` instance methods:
+`View` instance methods and properties:
 
 ```
 def addToSuperview(uiView):
 
 def removeFromSuperview():
+
+aView.frame #tuple of four
 ```
 
 `GeometrySource` Class methods:
