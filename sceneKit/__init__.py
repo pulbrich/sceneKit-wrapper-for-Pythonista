@@ -195,7 +195,7 @@ class View(SceneRenderer, CInst):
   drawableResizesAsynchronously = property(getDrawableResizesAsynchronously, setDrawableResizesAsynchronously)
   
   def setFrame(self, aFrame):
-    aFrame = CGRect(CGPoint(aFrame[0], aFrame[1]), CGSize(aFrame[3], aFrame[4]))
+    aFrame = CGRect(CGPoint(aFrame[0], aFrame[1]), CGSize(aFrame[2], aFrame[3]))
     self.ID.setFrame_(aFrame)    
   def getFrame(self):
     ret = self.ID.frame()
