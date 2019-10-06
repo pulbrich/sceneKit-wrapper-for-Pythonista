@@ -106,7 +106,7 @@ class Camera(Animatable, CInst):
     self.ID.setUsesOrthographicProjection(aBool)    
   def getUsesOrthographicProjection(self):
     return self.ID.usesOrthographicProjection()
-  usesOrthographicProjection = property(getUsesOrthographicProjection, getUsesOrthographicProjection)
+  usesOrthographicProjection = property(getUsesOrthographicProjection, setUsesOrthographicProjection)
   
   def setOrthographicScale(self, aScale):
     self.ID.setOrthographicScale(aScale)    
