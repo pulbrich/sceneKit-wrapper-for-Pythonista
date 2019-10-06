@@ -158,8 +158,8 @@ class SceneRenderer:
     self.ID.prepareObjects_withCompletionHandler_(objects, blockInstance.blockCode)
   
   def hitTest(self, aPoint, options):
-    hitList = self.ID.hitTest_options_(CGPoint(aPoint), hitTestOptions(options))
-    return tuple([sceneKit.HitTestResult.outof(aHit) for aHit in hitList])
+    hitList = self.ID.hitTest_options_(CGPoint(aPoint[0], aPoint[1]), hitTestOptions(options))
+    return tuple(sceneKit.HitTestResult.outof(aHit) for aHit in hitList)
 
   def isNodeInsideFrustum(self, node=None, withPointOfView=None):
     return self.ID.isNodeInsideFrustum_withPointOfView_(node.ID, withPointOfView.ID)  

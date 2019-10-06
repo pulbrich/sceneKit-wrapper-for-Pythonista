@@ -45,7 +45,7 @@ SCNHitTestBackFaceCullingKey, SCNHitTestBoundingBoxOnlyKey, SCNHitTestOptionCate
 SCNHitTestClipToZRangeKey, SCNHitTestIgnoreChildNodesKey, SCNHitTestIgnoreHiddenNodesKey, \
 SCNHitTestRootNodeKey, SCNHitTestOptionSearchMode = _hitTestOptions
 HitTestBackFaceCulling, HitTestBoundingBoxOnly, HitTestCategoryBitMask, HitTestClipToZRange, \
-HitTestIgnoreChildNodes, HitTestIgnoreHiddenNodes, HitTestRootNode, HitTestSearchMode = _hitTestOptions
+HitTestIgnoreChildNodes, HitTestIgnoreHiddenNodes, HitTestRootNode, HitTestOptionSearchMode = _hitTestOptions
 
 class HitTestSearchMode(Enum):
   Closest = 0
@@ -72,7 +72,7 @@ def hitTestOptions(inDict):
       outDict[k] = bool(v)
     elif k == HitTestRootNode:
       outDict[k] = v.ID
-    elif k == HitTestSearchMode:
+    elif k == HitTestOptionSearchMode:
       outDict[k] = v.value
   return outDict
 
