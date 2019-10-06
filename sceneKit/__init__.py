@@ -199,7 +199,7 @@ class View(SceneRenderer, CInst):
     self.ID.setFrame_(aFrame)    
   def getFrame(self):
     ret = self.ID.frame()
-    return (ret.origin.x, ret.origin.y, ret.size.height, ret.size.width)
+    return (ret.origin.x, ret.origin.y, ret.size.width, ret.size.height)
   frame = property(getFrame, setFrame)
   
     
