@@ -44,8 +44,9 @@ _hitTestOptions = tuple(_hitTestOptions)
 SCNHitTestBackFaceCullingKey, SCNHitTestBoundingBoxOnlyKey, SCNHitTestOptionCategoryBitMask, \
 SCNHitTestClipToZRangeKey, SCNHitTestIgnoreChildNodesKey, SCNHitTestIgnoreHiddenNodesKey, \
 SCNHitTestRootNodeKey, SCNHitTestOptionSearchMode = _hitTestOptions
-HitTestBackFaceCulling, HitTestBoundingBoxOnly, HitTestCategoryBitMask, HitTestClipToZRange, \
-HitTestIgnoreChildNodes, HitTestIgnoreHiddenNodes, HitTestRootNode, HitTestOptionSearchMode = _hitTestOptions
+HitTestBackFaceCullingKey, HitTestBoundingBoxOnlyKey, HitTestOptionCategoryBitMask, \
+HitTestClipToZRangeKey, HitTestIgnoreChildNodesKey, HitTestIgnoreHiddenNodesKey, \
+HitTestRootNodeKey, HitTestOptionSearchMode = _hitTestOptions
 
 class HitTestSearchMode(Enum):
   Closest = 0
@@ -58,19 +59,19 @@ class HitTestSearchMode(Enum):
 def hitTestOptions(inDict):
   outDict = {}
   for k, v in inDict.items():
-    if k == HitTestBackFaceCulling:
+    if k == HitTestBackFaceCullingKey:
       outDict[k] = bool(v)
-    elif k == HitTestBoundingBoxOnly:
+    elif k == HitTestBoundingBoxOnlyKey:
       outDict[k] = bool(v)
-    elif k == HitTestCategoryBitMask:
+    elif k == HitTestOptionCategoryBitMask:
       outDict[k] = int(v)
-    elif k == HitTestClipToZRange:
+    elif k == HitTestClipToZRangeKey:
       outDict[k] = bool(v)
-    elif k == HitTestIgnoreChildNodes:
+    elif k == HitTestIgnoreChildNodesKey:
       outDict[k] = bool(v)
-    elif k == HitTestIgnoreHiddenNodes:
+    elif k == HitTestIgnoreHiddenNodesKey:
       outDict[k] = bool(v)
-    elif k == HitTestRootNode:
+    elif k == HitTestRootNodeKey:
       outDict[k] = v.ID
     elif k == HitTestOptionSearchMode:
       outDict[k] = v.value
