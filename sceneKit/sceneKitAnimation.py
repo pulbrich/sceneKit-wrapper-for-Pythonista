@@ -433,6 +433,21 @@ class Animatable:
   def removeAnimation(self, key):
     self.ID.removeAnimationForKey_(key)
     
+  def addAnimationPlayer(self, player, key=None):
+    if key is not None: key = str(key)
+    self.ID.addAnimationPlayer_forKey_(player.ID, key)
+    
+  def animationPlayerForKey(self, key):
+    return sceneKit.AnimationPlayer.outof(self.ID.animationPlayerForKey_(key))
+    
+  def removeAnimationForKey(self, key, duration=0., blendOutDuration=None):
+    if blendOutDuration is not None:
+      duration = blendOutDuration
+    if duration > 0.:
+      self.ID.removeAnimationForKey_blendOutDuration_(key, duration)
+    else:
+      self.ID.removeAnimationForKey_(key)
+    
 class AnimationPlayer(CInst, Animatable):
   def __init__(self, animation=None, ID=None):
     if animation is not None:
