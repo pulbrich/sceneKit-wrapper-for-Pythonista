@@ -441,6 +441,10 @@ class AnimationPlayer(CInst, Animatable):
       self.ID = ID
     else:
       self.ID = None
+      
+  @classmethod
+  def animationPlayerWithAnimation(cls, animation=None):
+    return cls(animation=animation)
     
   def setAnimation(self, anAnimation):
     self.ID.setAnimation(anAnimation.ID)    
