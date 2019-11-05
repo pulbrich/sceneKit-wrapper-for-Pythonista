@@ -53,7 +53,7 @@ class MainViewController:
     data.hud_layer = Hud()
     self.next_stage(selector.SelectorStage())
 
-    data.main_view.present(hide_title_bar=True)
+    data.main_view.present(style='fullscreen', hide_title_bar=True)
    
   @classmethod 
   def next_stage(cls, stage_instance):

@@ -128,7 +128,7 @@ def main():
   directional_light.color = 'yellow'
   
   
-  main_view.present(hide_title_bar=False)
+  main_view.present(style='fullscreen', hide_title_bar=False)
   
 if __name__ == '__main__':
   main()

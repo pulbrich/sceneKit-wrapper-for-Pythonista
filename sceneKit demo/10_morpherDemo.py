@@ -108,7 +108,7 @@ class Demo:
     self.rotate_action = scn.Action.repeatActionForever(scn.Action.rotateBy(0, math.pi*2, 0, 10))
     self.geometry_node.runAction(self.rotate_action)
   
-    self.main_view.present(hide_title_bar=False)
+    self.main_view.present(style='fullscreen', hide_title_bar=False)
 
   def update(self, view, atTime):
     tick = (int(atTime*1000) % 314)/100.

@@ -97,7 +97,7 @@ def demo():
     geometry_node.runAction(rotate_action)
     geometry2_node.runAction(rotate_action)
     
-    main_view.present(hide_title_bar=False)
+    main_view.present(style='fullscreen', hide_title_bar=False)
   
   
 demo()

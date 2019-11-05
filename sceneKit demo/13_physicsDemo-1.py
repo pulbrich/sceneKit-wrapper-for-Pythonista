@@ -119,6 +119,6 @@ class Demo:
     light_node.lookAt((0, rope_length/2+1.0, 0))
     root_node.addChildNode(light_node)
     
-    main_view.present(hide_title_bar=False)
+    main_view.present(style='fullscreen', hide_title_bar=False)
 
 Demo.run()

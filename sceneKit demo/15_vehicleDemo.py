@@ -178,7 +178,7 @@ class Demo:
     self.close = False
     self.shut_down = False
     self.main_view.add_subview(self.close_button)
-    self.main_view.present(hide_title_bar=~DEBUG)
+    self.main_view.present(style='fullscreen', hide_title_bar=~DEBUG)
 
     
   def close(self, sender):

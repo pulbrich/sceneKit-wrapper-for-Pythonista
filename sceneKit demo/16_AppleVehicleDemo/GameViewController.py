@@ -90,7 +90,7 @@ class GameViewController:
     self.check = 0
     self.tryVar = 0
     
-    self.main_view.present(hide_title_bar=True)
+    self.main_view.present(style='fullscreen', hide_title_bar=True)
 
 
   def setupScene(self):

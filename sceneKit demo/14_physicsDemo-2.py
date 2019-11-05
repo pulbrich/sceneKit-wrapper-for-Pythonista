@@ -122,7 +122,7 @@ class Demo:
     light_node.constraints = constraint
     root_node.addChildNode(light_node)
     
-    main_view.present(hide_title_bar=False)
+    main_view.present(style='fullscreen', hide_title_bar=False)
     
   def didEndContact(self, aWorld, aContact):
     big, small = (aContact.nodeA, aContact.nodeB) if aContact.nodeA.physicsBody.mass > aContact.nodeB.physicsBody.mass else (aContact.nodeB, aContact.nodeA)
