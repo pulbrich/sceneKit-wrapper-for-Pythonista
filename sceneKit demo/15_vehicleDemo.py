@@ -10,12 +10,19 @@ import math
 import random
 from enum import IntEnum
 import weakref
+import os
 
 
 DEBUG = False
 MAXCARS = 3 # max 5, set it lower for weaker devices
 ENGINESOUND = True # set it to False for weaker devices or if too many cars
 MAXACTIVEREVERSE = 2
+
+UIDevice = ObjCClass('UIDevice')
+device = UIDevice.currentDevice()
+machine = os.uname().machine
+system_version = int(str(device.systemVersion()).split('.')[0])
+WORLD_SPEED = 1. if system_version >= 13 else 2.
 
 def distance(aNode, bNode):
   a = aNode.position
@@ -83,7 +90,7 @@ class Demo:
     self.scene_view.delegate = self
     
     self.physics_world = self.scene_view.scene.physicsWorld
-    self.physics_world.speed = 2.
+    self.physics_world.speed = WORLD_SPEED
     self.physics_world.contactDelegate = self
     
     if DEBUG:
