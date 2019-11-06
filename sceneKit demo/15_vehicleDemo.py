@@ -197,9 +197,6 @@ class Demo:
     for aCar in self.cars:
       aCar.smoker_node.removeAllParticleSystems()
       aCar.tire_node.removeAllParticleSystems()
-      if ENGINESOUND:
-        aCar.sound.loops = False
-        aCar.chassis_node.removeAllAudioPlayers()
     for aNode in self.used_flags.values():
       aNode.removeAllParticleSystems()
       aNode.removeAllAudioPlayers()
