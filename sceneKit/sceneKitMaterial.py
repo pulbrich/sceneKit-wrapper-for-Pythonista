@@ -7,7 +7,9 @@ import sceneKit
 from .sceneKitEnv import *
 from .sceneKitAnimation import *
 
-_lightingModels = ('SCNLightingModelBlinn', 'SCNLightingModelConstant', 'SCNLightingModelLambert', 'SCNLightingModelPhong', 'SCNLightingModelPhysicallyBased')
+_lightingModels = []
+for aModel in ['SCNLightingModelBlinn', 'SCNLightingModelConstant', 'SCNLightingModelLambert', 'SCNLightingModelPhong', 'SCNLightingModelPhysicallyBased']:
+  _lightingModels.append(str(ObjCInstance(c_void_p.in_dll(c, aModel))))
 
 SCNLightingModelBlinn, SCNLightingModelConstant, SCNLightingModelLambert, SCNLightingModelPhong, SCNLightingModelPhysicallyBased = _lightingModels
 LightingModelBlinn, LightingModelConstant, LightingModelLambert, LightingModelPhong, \
