@@ -1008,7 +1008,7 @@ class CoreKeyframeAnimation(CoreAnimation):
   def getContinuityValues(self):
     ret = self.ID.continuityValues()
     if ret is None: return None
-    return tuple(aRetfloatValue() for aRet in ret)
+    return tuple(ret.floatValue() for aRet in ret)
   continuityValues = property(getContinuityValues, setContinuityValues)
   
   def setBiasValues(self, aList):
@@ -1016,7 +1016,7 @@ class CoreKeyframeAnimation(CoreAnimation):
   def getBiasValues(self):
     ret = self.ID.biasValues()
     if ret is None: return None
-    return tuple(aRetfloatValue() for aRet in ret)
+    return tuple(ret.floatValue() for aRet in ret)
   biasValues = property(getBiasValues, setBiasValues)
   
 class CoreAnimationGroup(CoreAnimation):

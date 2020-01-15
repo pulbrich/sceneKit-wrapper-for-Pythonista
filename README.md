@@ -309,7 +309,7 @@ The block gets called periodically and should return `False` to tell SceneKit to
 ```
 def pCode(success):
 ```
-The block get called when object preparation fails or completes. `success` is `True` if all content was successfully prepared for rendering; otherwise `False`.
+The block gets called when object preparation fails or completes. `success` is `True` if all content was successfully prepared for rendering; otherwise `False`.
 
 ### Block related to `scn.Scene`
 
